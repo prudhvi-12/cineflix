@@ -50,9 +50,9 @@ class search extends Component {
     render() {
         return (
             <React.Fragment>
-                <div class="middle">
-                    <input className="search-bar" type="text" value={this.state.value} onChange={this.onChange} />
-                    <button className="btn btn-sm bg-warning" onClick={this.onSubmit}>Search</button>
+                <div className="search" style={{marginTop:'100px'}}>
+                    <input style={{marginLeft:'10px' , border: '1px solid black' ,borderRadius:'3px'}} type="text" value={this.state.value} onChange={this.onChange} />
+                    <button className="search-bar" onClick={this.onSubmit}>Search</button>
                     <br />
                     <button className={this.buttoncolor('movie')} value="movie" onClick={this.setType} disabled={this.state.movies.length === 0}>Movies</button>
                     <button className={this.buttoncolor('tv')} value="tv" onClick={this.setType} disabled={this.state.movies.length === 0}>Tv Series</button>

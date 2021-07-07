@@ -28,7 +28,7 @@ class series extends Component {
         const k = pre.toString();
         const { data } = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=f2f1f2dd6ced300c2e885d8b647c510b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${k}&with_watch_monetization_types=flatrate`);
         const obj = [...data.results];
-        this.setState({ genres: pre, movies: obj });
+        this.setState({ genres: pre, movies: obj,pageno:1 });
     }
     deleteGenre = async (id) => {
         const pre = [...this.state.genres];
@@ -37,7 +37,7 @@ class series extends Component {
         const k = pre.toString();
         const { data } = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=f2f1f2dd6ced300c2e885d8b647c510b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${k}&with_watch_monetization_types=flatrate`);
         const obj = [...data.results];
-        this.setState({ genres: pre, movies: obj });
+        this.setState({ genres: pre, movies: obj,pageno:1 });
     }
     async componentDidMount() {
         const { data } = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=f2f1f2dd6ced300c2e885d8b647c510b&language=en-US&sort_by=popularity.desc&page=${this.state.pageno}`);
@@ -60,10 +60,12 @@ class series extends Component {
     render = () => {
         const { movies } = this.state;
         return (
-            <div className="row">
+            <div style={{textAlign:'center'}}>
                 <Genre type='tv' addGenre={this.addGenre} deleteGenre={this.deleteGenre} />
+                <div className="row" style={{marginTop:'200px'}}>
                 {movies.map(movie => <Movie id={movie.id} type='tv' date={movie.first_air_date} name={movie.name} click={this.click} rate={movie.vote_average} path={movie.backdrop_path} />)}
-                {this.state.movies.length > 0 && <div className="m-3"><Page totalpages={this.state.totalpages} changepage={this.changepage} /></div>}
+                </div>
+                {this.state.movies.length > 0 && <Page totalpages={this.state.totalpages} changepage={this.changepage} />}
             </div>
         );
     }

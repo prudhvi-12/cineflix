@@ -18,7 +18,7 @@ class Page extends Component{
     }
     render() { 
         return ( 
-        <Pagination count={this.props.totalpages} onChange={this.onChange}variant="outlined" color="primary" />
+        <Pagination  style={{display:'inline-block', marginBottom:'15px'}} count={this.props.totalpages} onChange={this.onChange}variant="outlined" color="primary" />
          );
     }
 }

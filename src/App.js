@@ -25,7 +25,7 @@ class App extends Component {
   render(){ 
     return ( 
       <div>
-       <NavBar/>
+      <NavBar/>
       <Switch>
       <Route path='/navigation' component={NavBar}/>
       <Route path="/movie/:id" component={movieId}/> 

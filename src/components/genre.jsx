@@ -31,15 +31,15 @@ class Genre extends Component {
     genreClass(id) {
         const ind = this.state.sgenres.indexOf(id);
         if (ind === -1) {
-            return "col-1 badge movie bg-primary text-wrap";
+            return "badge movie bg-primary text-wrap";
         }
         else{
-            return "col-1 badge movie bg-danger text-wrap";
+            return "badge movie bg-danger text-wrap";
         }      
     }
     render() {
         return (
-            <div className="row m-2">
+            <div className="genre">
                 {this.state.genres.map(genre => <h2 className={this.genreClass(genre.id)} onClick={() => this.onClick(genre.id)}>{genre.name}</h2>)}
             </div>
         );

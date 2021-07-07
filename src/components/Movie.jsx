@@ -22,8 +22,8 @@ class Movie extends Component {
           var {title,path,id,name,date,rate,type}=this.props;
            const imgaddress=this.state.imgbase+path;
         return (
-        <div className="card col-2" style={{margin: '10px'}} onClick={()=> this.props.click(id,type)}>
-            <img src={imgaddress} className="card-img-top rounded float-start" alt='Image Not-Found' height='281px' style={{aspectRatio:500/281,}}/>
+        <div className="column"  onClick={()=> this.props.click(id,type)}>
+            <img src={imgaddress}  alt='Image Not-Found' className="movie-image"/>
             <div className="card-body">
               {{name} && <p className="card-text fw-bolder">{name}</p>}  
                {this.rate()}
