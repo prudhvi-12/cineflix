@@ -1,10 +1,7 @@
 /*For making words bold use fw-bold fw-bolder */
-
-
-import { findByTitle } from '@testing-library/react';
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
-import './styling.css';
+import '../css/styling.css';
 
 class Movie extends Component {
     state={

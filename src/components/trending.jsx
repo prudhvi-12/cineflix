@@ -4,6 +4,7 @@ import axios from 'axios';
 import queryString from 'querystring';
 import Movie from './Movie';
 import Page from './pagination';
+import '../css/styling.css';
 
 const api_key = 'api_key=f2f1f2dd6ced300c2e885d8b647c510b';
 const base_url = 'https://api.themoviedb.org/3/movie';
@@ -32,7 +33,7 @@ class trending extends Component {
        render = () => {
               const { movies } = this.state;
               return (
-                     <div style={{textAlign:'center'}}>
+                     <div style={{textAlign:'center', marginTop:'100px'}}>
                             <div className="row">
                                    {movies.map(movie => <Movie id={movie.id} type={movie.media_type} date={movie.release_date || movie.first_air_date} name={movie.name || movie.title} click={this.click} rate={movie.vote_average} path={movie.poster_path} />)}
                             </div>

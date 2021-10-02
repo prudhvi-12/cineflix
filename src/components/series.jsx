@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link, Route, Redirect, BrowserRouter, Switch } from 'react-router-dom';
 import axios from 'axios';
-import queryString from 'querystring';
 import Movie from './Movie';
 import Page from './pagination';
 import Genre from './genre';
-import './styling.css';
+import '../css/styling.css';
 
 
 const api_key = 'api_key=f2f1f2dd6ced300c2e885d8b647c510b';
@@ -60,12 +59,12 @@ class series extends Component {
     render = () => {
         const { movies } = this.state;
         return (
-            <div style={{textAlign:'center'}}>
+            <div style={{textAlign:'center' , textAlign:'center'}}>
                 <Genre type='tv' addGenre={this.addGenre} deleteGenre={this.deleteGenre} />
                 <div className="row" style={{marginTop:'200px'}}>
                 {movies.map(movie => <Movie id={movie.id} type='tv' date={movie.first_air_date} name={movie.name} click={this.click} rate={movie.vote_average} path={movie.backdrop_path} />)}
                 </div>
-                {this.state.movies.length > 0 && <Page totalpages={this.state.totalpages} changepage={this.changepage} />}
+                {this.state.movies.length > 1 && <Page totalpages={this.state.totalpages} changepage={this.changepage} />}
             </div>
         );
     }

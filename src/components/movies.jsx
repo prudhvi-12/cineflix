@@ -5,7 +5,7 @@ import queryString from 'querystring';
 import Movie from './Movie';
 import Page from './pagination';
 import Genre from './genre';
-import './styling.css';
+import '../css/styling.css';
 
 const api_key = 'api_key=f2f1f2dd6ced300c2e885d8b647c510b';
 const base_url = 'https://api.themoviedb.org/3/movie';
@@ -71,7 +71,7 @@ class movies extends Component {
             <div className="row" style={{marginTop:'200px'}}>
                 {movies.map(movie => <Movie id={movie.id} notfound={this.notfound} type='movie' date={movie.release_date || movie.first_air_date} name={movie.name || movie.title} click={this.click} title={movie.title} rate={movie.vote_average} path={movie.poster_path} />)}
             </div>
-            {this.state.movies.length > 0 && <Page totalpages={this.state.totalpages} changepage={this.changepage} />}
+            {this.state.movies.length > 1 && <Page totalpages={this.state.totalpages} changepage={this.changepage} />}
             </div>
         );
     }

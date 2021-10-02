@@ -8,6 +8,7 @@ these changes huld be refleted in main page contentsby changing page={given} in 
 
 import React, { Component } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
+import '../css/styling.css';
 
 
 class Page extends Component{
@@ -18,7 +19,7 @@ class Page extends Component{
     }
     render() { 
         return ( 
-        <Pagination  style={{display:'inline-block', marginBottom:'15px'}} count={this.props.totalpages} onChange={this.onChange}variant="outlined" color="primary" />
+        <Pagination  style={{display:'inline-block' , marginBottom:'15px'}} count={this.props.totalpages} onChange={this.onChange}variant="outlined" color="primary" />
          );
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './styling.css';
+import '../css/styling.css';
 
 const api_key = 'api_key=f2f1f2dd6ced300c2e885d8b647c510b';
 const base_url = 'https://api.themoviedb.org/3/movie';

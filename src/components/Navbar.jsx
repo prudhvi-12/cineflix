@@ -15,7 +15,7 @@ class Navbar extends Component {
   render = () => {
     return (
       <div className="navbar">
-         <h1>Movies App</h1>
+         <h1 style={{fontFamily:'moz-initial'}}>CINE BUX</h1>
         <Link to="/trending" className="navbar-column link">Trending</Link>
         <Link to='/movies' className="navbar-column link">Movies</Link>
         <Link to='/series' className="navbar-column link">Series</Link>

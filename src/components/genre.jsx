@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './styling.css';
+import '../css/styling.css';
 import axios from 'axios';
-import { BackgroundColor } from 'jest-matcher-utils/node_modules/chalk';
 
 class Genre extends Component {
     state = {

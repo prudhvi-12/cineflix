@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-import './App.css';
 import {Switch,Link,Route,Redirect} from 'react-router-dom';
 import axios from 'axios';
 import queryString from 'querystring';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import trending from './trending';
-import  movies from './movies';
-import  series from './series';
-import NotFound from './not-found';
-import Navbar from './Navbar';
-import NavBar from './Navbar';
-import movieId from './movieid';
-import seriesId from './seriesid';
-import search from './search';
+import trending from './components/trending';
+import  movies from './components/movies';
+import  series from './components/series';
+import NotFound from './components/not-found';
+import NavBar from './components/Navbar';
+import movieId from './components/movieid';
+import seriesId from './components/seriesid';
+import search from './components/search';
 
 class App extends Component {
   state = { 
